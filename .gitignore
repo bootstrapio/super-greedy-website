@@ -1,0 +1,54 @@
+# External docs cache - contains timestamps, should not be tracked
+docs/external-docs-cache.json
+
+# Internal keys and sensitive documentation files
+**/internal-keys.md
+
+# Build artifacts and large files
+dist/
+dist-electron-dev/
+dist-ts/
+release/
+obfuscated-build/
+node_modules/
+.vite/
+
+# Electron build artifacts
+*.dmg
+*.exe
+*.AppImage
+*.deb
+*.rpm
+*.snap
+*.zip
+
+# macOS system files
+.DS_Store
+
+# Cursor plans (temporary/generated)
+.cursor/plans/
+
+# Claude Code worktrees (machine-local, auto-generated)
+.claude/worktrees/
+.claude/
+
+# Local tool/runtime environments
+.venv_pdf/
+
+# Local temporary runtime artifacts
+tmp/
+output/
+
+# Log files
+debug.log
+server.log
+*.log
+
+# Environment variables (contains sensitive API keys)
+.env
+.env.local
+.env.production
+.env.electron.local
+
+# Electron dev: localStorage seed (API keys, Reddit, etc.) — never commit
+electron-dev-storage.seed.json
