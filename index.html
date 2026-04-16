@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Greedy | AI-Powered Trading Strategy</title>
+    <meta
+      name="description"
+      content="Super Greedy is an AI-powered trading strategy app combining Greedy AI signals, supply and demand zones, and multi-timeframe analysis for traders who want an edge."
+    />
+    <meta name="author" content="Super Greedy" />
+    <meta name="application-name" content="Super Greedy" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="bingbot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="theme-color" content="#f8f9ff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="canonical" href="https://supergreedy.com/" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-64.png" sizes="32x32" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Super Greedy" />
+    <meta property="og:title" content="Super Greedy | AI-Powered Trading Strategy" />
+    <meta
+      property="og:description"
+      content="AI signals, supply and demand zones, and multi-timeframe analysis in one automated trading strategy."
+    />
+    <meta property="og:url" content="https://supergreedy.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Super Greedy | AI-Powered Trading Strategy" />
+    <meta
+      name="twitter:description"
+      content="AI signals, supply and demand zones, and multi-timeframe analysis in one automated trading strategy."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://supergreedy.com/#website",
+            "name": "Super Greedy",
+            "url": "https://supergreedy.com/",
+            "description": "Super Greedy is an AI-powered trading strategy app for serious traders.",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://supergreedy.com/#organization"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://supergreedy.com/#organization",
+            "name": "Super Greedy",
+            "url": "https://supergreedy.com/",
+            "email": "hello@supergreedy.com"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://supergreedy.com/#webpage",
+            "url": "https://supergreedy.com/",
+            "name": "Super Greedy | AI-Powered Trading Strategy",
+            "isPartOf": { "@id": "https://supergreedy.com/#website" },
+            "description": "Super Greedy combines AI signals, supply and demand zones, and multi-timeframe analysis into one automated trading strategy."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://supergreedy.com/#software",
+            "name": "Super Greedy",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "macOS, Windows",
+            "url": "https://supergreedy.com/",
+            "publisher": { "@id": "https://supergreedy.com/#organization" },
+            "featureList": [
+              "Greedy AI trade signals",
+              "Supply and demand zone detection",
+              "Multi-timeframe analysis",
+              "Automated trade execution",
+              "Configurable strategy parameters",
+              "Real-time market analysis"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://supergreedy.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does Super Greedy generate trade signals?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Super Greedy uses a proprietary AI model that analyzes price action, volume, and market structure in real time to generate high-probability entry and exit signals across configured instruments."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What markets does Super Greedy support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Super Greedy is built for futures markets including ES, NQ, MES, and MNQ, with additional instruments configurable based on your trading setup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Super Greedy work with prop firm rules?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Super Greedy includes configurable risk parameters including daily loss limits, max drawdown thresholds, and position sizing controls that align with common prop firm evaluation rules."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/laptop-screen-with-preview-modal.avif"
+      type="image/avif"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="./website.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="./website.css" /></noscript>
+    <script src="./site.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skipLink" href="#main-content">Skip to content</a>
+        <header>
+      <nav class="marketingNav" aria-label="Primary site navigation">
+        <div class="marketingNavInner">
+          <a class="marketingBrandRow" href="/" aria-label="Super Greedy home">
+            <span class="marketingIcon" aria-hidden="true"></span>
+            <span class="brand marketingBrand">Super Greedy</span>
+          </a>
+          <div class="marketingNavRight">
+            <div class="marketingNavLinks" aria-label="Primary site links">
+              <a class="marketingNavLink" href="/features/">Features</a>
+              <a class="marketingNavLink" href="/use-cases/">Use Cases</a>
+              <a class="marketingNavLink" href="/faq/">FAQ</a>
+            </div>
+            <div class="marketingNavActions">
+              <a class="primaryAction marketingNavCta" href="/contact/">
+                <span class="iconGlyph" aria-hidden="true">✦</span>
+                <span>Get Started</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content" class="marketingShell">
+      <section
+        class="heroSection"
+        id="ai-trading-strategy"
+        aria-labelledby="hero-section-title"
+        aria-describedby="hero-section-description"
+      >
+        <div class="heroSectionGrid">
+          <article class="heroSectionCopy">
+            <div class="heroSectionIntro">
+              <span class="fieldLabel">AI-Powered Trading Strategy</span>
+              <h1 id="hero-section-title" class="heroSectionTitle">
+                Trade smarter with signals that <span class="heroSectionTitleAccent">never sleep.</span>
+              </h1>
+            </div>
+            <p id="hero-section-description" class="heroSectionText">
+              Super Greedy combines AI signals, supply and demand zones, and multi-timeframe analysis into one automated trading strategy.
+            </p>
+            <span class="fieldLabel heroSectionLabelLine">Super Greedy: the edge you've been looking for.</span>
+            <div class="heroActions">
+              <a
+                class="primaryAction"
+                href="#one-last-thing"
+                aria-label="Scroll to the get started section"
+              >
+                <span class="iconGlyph" aria-hidden="true">✦</span>
+                <span>Get Started</span>
+              </a>
+            </div>
+          </article>
+
+          <figure class="heroSectionMedia">
+            <div class="heroSectionFrame">
+              <picture>
+                <source
+                  srcset="./assets/images/laptop-screen-with-preview-modal.avif"
+                  type="image/avif"
+                />
+                <img
+                  src="./assets/images/laptop-screen-with-preview-modal.webp"
+                  alt="Super Greedy trading dashboard showing AI signals and supply demand zones on a live chart"
+                  width="1276"
+                  height="768"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </picture>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        class="marketingSection imageWorkflowSection"
+        id="trading-strategy-features"
+        aria-labelledby="features-title"
+        aria-describedby="features-description"
+      >
+        <header class="sectionHeader sectionHeaderCentered">
+          <span class="fieldLabel">All-In-One Trading Strategy</span>
+          <h2 id="features-title" class="sectionTitle">Every edge you need, built into one strategy.</h2>
+          <p id="features-description" class="sectionText">
+            Super Greedy handles signal generation, zone detection, and trade management so you can focus on execution.
+          </p>
+          <p class="sectionLinkRow">
+            <a href="/features/">Explore Super Greedy features</a>
+          </p>
+        </header>
+
+        <div class="imageWorkflowGrid" aria-label="Super Greedy feature highlights">
+          <article
+            class="featureCard imageWorkflowCard imageWorkflowCardWide imageWorkflowCardLight"
+            aria-labelledby="feature-ai-signals-title"
+            aria-describedby="feature-ai-signals-description"
+          >
+            <header class="imageWorkflowCardHeader">
+              <span class="fieldLabel">Greedy AI Signals</span>
+              <h3 id="feature-ai-signals-title" class="featureTitle">High-probability entries on every setup.</h3>
+              <p id="feature-ai-signals-description" class="featureText">
+                The AI model analyzes price action, volume, and market structure in real time to surface the setups worth taking.
+              </p>
+            </header>
+            <ul class="imageWorkflowChipRow" aria-label="Signal example">
+              <li><span class="imageWorkflowChip imageWorkflowChipLiteral">Noise → High-confidence entry signal</span></li>
+            </ul>
+          </article>
+
+          <article
+            class="featureCard imageWorkflowCard imageWorkflowCardTall imageWorkflowCardPrimary"
+            aria-labelledby="feature-supply-demand-title"
+            aria-describedby="feature-supply-demand-description"
+          >
+            <header class="imageWorkflowCardHeader">
+              <span class="fieldLabel">Supply &amp; Demand Zones</span>
+              <h3 id="feature-supply-demand-title" class="featureTitle">Institutional zones, detected automatically.</h3>
+              <p id="feature-supply-demand-description" class="featureText">
+                Key supply and demand zones are identified and plotted so you always know where price is likely to react.
+              </p>
+            </header>
+            <ul class="imageWorkflowChipRow" aria-label="Zone example">
+              <li><span class="imageWorkflowChip">Supply</span></li>
+              <li><span class="imageWorkflowChip">Demand</span></li>
+            </ul>
+          </article>
+
+          <article
+            class="featureCard imageWorkflowCard imageWorkflowCardCompact imageWorkflowCardSoft"
+            aria-labelledby="feature-mtf-title"
+            aria-describedby="feature-mtf-description"
+          >
+            <header class="imageWorkflowCardHeader">
+              <span class="fieldLabel">Multi-Timeframe Analysis</span>
+              <h3 id="feature-mtf-title" class="featureTitle">Confirm setups across timeframes.</h3>
+              <p id="feature-mtf-description" class="featureText">
+                Higher-timeframe bias is factored into every signal so you only take trades aligned with the bigger picture.
+              </p>
+            </header>
+            <ul class="imageWorkflowChipRow" aria-label="Timeframe filters">
+              <li><span class="imageWorkflowChip">HTF Bias</span></li>
+              <li><span class="imageWorkflowChip">LTF Entry</span></li>
+            </ul>
+          </article>
+
+          <article
+            class="featureCard imageWorkflowCard imageWorkflowCardFlow sectionPanel"
+            aria-labelledby="feature-execution-title"
+            aria-describedby="feature-execution-description"
+          >
+            <header class="imageWorkflowCardHeader">
+              <span class="fieldLabel">Automated Execution</span>
+              <h3 id="feature-execution-title" class="featureTitle">Strategies run while you're away.</h3>
+              <p id="feature-execution-description" class="featureText">
+                Configure your risk parameters and let Super Greedy execute trades, manage stops, and take profits automatically.
+              </p>
+            </header>
+            <ul class="imageWorkflowChipRow" aria-label="Execution features">
+              <li><span class="imageWorkflowChip">Auto Entry</span></li>
+              <li><span class="imageWorkflowChip">Stop Management</span></li>
+              <li><span class="imageWorkflowChip">Take Profit</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="marketingSection useCaseSection"
+        id="trading-use-cases"
+        aria-labelledby="use-cases-title"
+        aria-describedby="use-cases-description"
+      >
+        <header class="sectionHeader sectionHeaderCentered">
+          <span class="fieldLabel">Use Cases</span>
+          <h2 id="use-cases-title" class="sectionTitle">Built for traders who want an edge.</h2>
+          <p id="use-cases-description" class="sectionText">
+            Super Greedy fits active trading workflows where speed, precision, and consistency directly affect your bottom line.
+          </p>
+          <p class="sectionLinkRow">
+            <a href="/use-cases/">See detailed use cases</a>
+          </p>
+        </header>
+
+        <div class="useCaseLayout">
+          <figure class="useCaseMedia">
+            <div class="useCaseFrame">
+              <picture>
+                <source
+                  srcset="./assets/images/laptop-screen-with-asset-management-interface.avif"
+                  type="image/avif"
+                />
+                <img
+                  src="./assets/images/laptop-screen-with-asset-management-interface.webp"
+                  alt="Super Greedy chart view showing active supply and demand zones with AI signal overlays"
+                  width="1276"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </figure>
+
+          <div class="useCaseList" aria-label="Super Greedy use cases">
+            <article class="useCaseItem" aria-labelledby="use-case-day-trading-name">
+              <span class="fieldLabel" id="use-case-day-trading-name">Day Trading</span>
+              <p class="useCaseTitle">Fast signals for intraday opportunities.</p>
+              <p class="useCaseBody">
+                Get real-time AI signals on ES, NQ, and other futures instruments tuned for intraday setups, with built-in risk controls to keep you within daily limits.
+              </p>
+            </article>
+
+            <article class="useCaseItem" aria-labelledby="use-case-prop-trading-name">
+              <span class="fieldLabel" id="use-case-prop-trading-name">Prop Trading</span>
+              <p class="useCaseTitle">Pass evaluations with consistent rules-based entries.</p>
+              <p class="useCaseBody">
+                Configurable drawdown limits, position sizing, and daily loss thresholds make Super Greedy a natural fit for TopstepX and other prop firm evaluations.
+              </p>
+            </article>
+
+            <article class="useCaseItem" aria-labelledby="use-case-swing-trading-name">
+              <span class="fieldLabel" id="use-case-swing-trading-name">Swing Trading</span>
+              <p class="useCaseTitle">Overnight setups with higher-timeframe confirmation.</p>
+              <p class="useCaseBody">
+                Multi-timeframe analysis identifies swing setups aligned with daily and weekly structure, giving you higher-conviction entries on moves that play out over days.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="marketingSection"
+        id="how-it-works"
+        aria-labelledby="workflow-title"
+        aria-describedby="workflow-description"
+      >
+        <header class="sectionHeader sectionHeaderCentered">
+          <span class="fieldLabel">How It Works</span>
+          <h2 id="workflow-title" class="sectionTitle">From setup to signal to execution.</h2>
+          <p id="workflow-description" class="sectionText">
+            Connect your account, configure your strategy, and Super Greedy handles the rest — analysis, signals, and automated execution.
+          </p>
+        </header>
+
+        <figure class="automationCtaMedia">
+          <picture>
+            <source srcset="./assets/images/laptop-screen-asset-list.avif" type="image/avif" />
+            <img
+              src="./assets/images/laptop-screen-asset-list.webp"
+              alt="Super Greedy signals panel showing active AI trade signals with entry, stop, and target levels"
+              width="1192"
+              height="768"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </figure>
+
+        <div class="workflowTimeline" aria-label="Super Greedy workflow steps">
+          <article class="workflowItem" aria-labelledby="workflow-step-1-title">
+            <div class="workflowMarker" aria-hidden="true">
+              <span class="workflowDot">01</span>
+            </div>
+            <div class="workflowContent">
+              <h3 id="workflow-step-1-title" class="featureTitle">Connect your account</h3>
+              <p class="featureText">
+                Link Super Greedy to your brokerage or prop firm account. Supports TopstepX and compatible futures brokers.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflowItem" aria-labelledby="workflow-step-2-title">
+            <div class="workflowMarker" aria-hidden="true">
+              <span class="workflowDot">02</span>
+            </div>
+            <div class="workflowContent">
+              <h3 id="workflow-step-2-title" class="featureTitle">Configure your strategy</h3>
+              <p class="featureText">
+                Set your instruments, risk parameters, timeframes, and execution rules. The strategy adapts to your trading style.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflowItem" aria-labelledby="workflow-step-3-title">
+            <div class="workflowMarker" aria-hidden="true">
+              <span class="workflowDot">03</span>
+            </div>
+            <div class="workflowContent">
+              <h3 id="workflow-step-3-title" class="featureTitle">AI analyzes the market</h3>
+              <p class="featureText">
+                Greedy AI scans price action, supply and demand zones, and multi-timeframe structure continuously to find high-probability setups.
+              </p>
+            </div>
+          </article>
+
+          <article class="workflowItem" aria-labelledby="workflow-step-4-title">
+            <div class="workflowMarker" aria-hidden="true">
+              <span class="workflowDot">04</span>
+            </div>
+            <div class="workflowContent">
+              <h3 id="workflow-step-4-title" class="featureTitle">Execute and review</h3>
+              <p class="featureText">
+                Trades execute automatically based on your configured rules. Review performance, adjust parameters, and keep improving.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="marketingSection automationCtaSection"
+        id="download-cta"
+        aria-labelledby="download-cta-title"
+        aria-describedby="download-cta-description"
+      >
+        <div class="automationCtaPanel">
+          <header class="sectionHeader automationCtaCopy">
+            <span class="fieldLabel">Get Started</span>
+            <h2 id="download-cta-title" class="sectionTitle automationCtaTitle">Your edge is waiting.</h2>
+            <p id="download-cta-description" class="automationCtaText">
+              Download Super Greedy and start trading with AI signals from day one.
+            </p>
+          </header>
+          <div class="automationCtaActions">
+            <a
+              class="primaryAction"
+              href="#one-last-thing"
+              aria-label="Scroll to the get started section"
+            >
+              <span class="iconGlyph" aria-hidden="true">✦</span>
+              <span>Download Now</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="marketingSection"
+        id="trading-faq"
+        aria-labelledby="faq-title"
+        aria-describedby="faq-description"
+      >
+        <header class="sectionHeader sectionHeaderCentered">
+          <span class="fieldLabel">Frequently Asked Questions</span>
+          <h2 id="faq-title" class="sectionTitle">Everything you should ask before you get started</h2>
+          <p id="faq-description" class="sectionText">
+            Common questions about how Super Greedy works, what it trades, and how to get set up.
+          </p>
+        </header>
+
+        <div class="faqList">
+          <details class="faqItem" open itemscope itemtype="https://schema.org/Question">
+            <summary class="faqItemSummary">
+              <span class="faqItemTitle" itemprop="name">How does Super Greedy generate trade signals?</span>
+              <span class="faqItemIcon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faqItemBody">
+              <p class="faqItemAnswer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <span itemprop="text">Super Greedy uses a proprietary AI model that analyzes price action, volume, and market structure in real time to generate high-probability entry and exit signals across configured instruments.</span>
+              </p>
+            </div>
+          </details>
+          <details class="faqItem" open itemscope itemtype="https://schema.org/Question">
+            <summary class="faqItemSummary">
+              <span class="faqItemTitle" itemprop="name">What markets does Super Greedy support?</span>
+              <span class="faqItemIcon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faqItemBody">
+              <p class="faqItemAnswer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <span itemprop="text">Super Greedy is built for futures markets including ES, NQ, MES, and MNQ, with additional instruments configurable based on your trading setup.</span>
+              </p>
+            </div>
+          </details>
+          <details class="faqItem" open itemscope itemtype="https://schema.org/Question">
+            <summary class="faqItemSummary">
+              <span class="faqItemTitle" itemprop="name">Can I customize the strategy parameters?</span>
+              <span class="faqItemIcon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faqItemBody">
+              <p class="faqItemAnswer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <span itemprop="text">Yes. Risk per trade, position sizing, daily loss limits, target levels, and timeframe preferences are all configurable so the strategy fits your style and account rules.</span>
+              </p>
+            </div>
+          </details>
+          <details class="faqItem" open itemscope itemtype="https://schema.org/Question">
+            <summary class="faqItemSummary">
+              <span class="faqItemTitle" itemprop="name">Does Super Greedy work with prop firm rules?</span>
+              <span class="faqItemIcon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faqItemBody">
+              <p class="faqItemAnswer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <span itemprop="text">Yes. Super Greedy includes configurable risk parameters including daily loss limits, max drawdown thresholds, and position sizing controls that align with common prop firm evaluation rules.</span>
+              </p>
+            </div>
+          </details>
+          <details class="faqItem" open itemscope itemtype="https://schema.org/Question">
+            <summary class="faqItemSummary">
+              <span class="faqItemTitle" itemprop="name">How are supply and demand zones calculated?</span>
+              <span class="faqItemIcon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faqItemBody">
+              <p class="faqItemAnswer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <span itemprop="text">Supply and demand zones are identified algorithmically based on price structure, momentum imbalances, and volume patterns — the same areas institutional participants tend to transact.</span>
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <p class="sectionLinkRow faqSectionLinkRow">
+          <a class="sectionLinkCta" href="/faq/">
+            <span>Read the full Super Greedy FAQ</span>
+            <span class="sectionLinkCaret" aria-hidden="true">›</span>
+          </a>
+        </p>
+      </section>
+
+      <section
+        class="marketingSection closingBanner"
+        id="one-last-thing"
+        aria-labelledby="closing-banner-title"
+        aria-describedby="closing-banner-description"
+      >
+        <div class="closingBannerPanel">
+          <span class="fieldLabel">One Last Thing</span>
+          <h2 id="closing-banner-title" class="sectionTitle closingBannerTitle">
+            If you're missing trades, you're missing money.
+          </h2>
+          <p id="closing-banner-description" class="closingBannerText">
+            Watching. Waiting. Second-guessing. That's not a strategy. Super Greedy reads the market and acts. Set it up once, trade with confidence.
+          </p>
+          <div class="closingBannerActions">
+            <a
+              class="primaryAction"
+              href="mailto:hello@supergreedy.com?subject=Super%20Greedy%20Download"
+              aria-label="Email Super Greedy to get the download"
+            >
+              <span class="iconGlyph" aria-hidden="true">✦</span>
+              <span>Download Now</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+        <footer class="marketingFooter" aria-labelledby="footer-title">
+      <div class="footerShell">
+        <div class="siteFooterRow siteFooterBody">
+          <div class="siteFooterTopRow">
+            <p id="footer-title" class="brand marketingBrand">Super Greedy</p>
+            <div class="siteFooterMetaRow">
+              <div class="footerLinks">
+                <a class="footerLink" href="/features/">Features</a>
+                <a class="footerLink" href="/use-cases/">Use Cases</a>
+                <a class="footerLink" href="/faq/">FAQ</a>
+              </div>
+              <span class="siteFooterMetaSeparator" aria-hidden="true">•</span>
+              <p class="footerCopyright">© <span data-current-year>2026</span></p>
+            </div>
+          </div>
+          <p class="footerMeta">AI-powered trading strategy for serious traders.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
