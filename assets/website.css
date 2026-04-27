@@ -1,0 +1,1652 @@
+:root {
+  color-scheme: light;
+  --surface: #f8f9ff;
+  --surface-card: #ffffff;
+  --surface-glass: rgba(248, 249, 255, 0.82);
+  --text: #0d1c2f;
+  --text-muted: #737687;
+  --text-soft: #c3c6d8;
+  --primary: #004ccd;
+  --primary-strong: #0f62fe;
+  --success-strong: #1fa562;
+  --danger: #ba1a1a;
+  --warning-strong: #d7a800;
+  --warning-border: rgba(215, 168, 0, 0.42);
+  --shadow-ambient: 0 8px 24px rgba(13, 28, 47, 0.06);
+  --radius: 12px;
+  --space: 12px;
+  --space-1: var(--space);
+  --space-2: var(--space);
+  --space-3: var(--space);
+  --space-4: 20px;
+  --space-5: 28px;
+  --shell-padding: var(--space);
+  --font-display: 2rem;
+  --font-title: 1.15rem;
+  --font-body: 0.95rem;
+  --font-button: 0.75rem;
+  --tracking: 0;
+  --line-display: 1;
+  --line-title: 1.1;
+  --line-body: 1.45;
+  --line-label: 1.15;
+  --site-primary: #0f62fe;
+  --marketing-shell-width: min(1120px, calc(100% - 32px));
+  --marketing-shell-width-mobile: min(100%, calc(100% - 24px));
+  --marketing-nav-padding-y: clamp(10px, 1.4vw, var(--space-3));
+  --marketing-nav-padding-x: var(--shell-padding);
+  --marketing-nav-gap: clamp(8px, 1.2vw, var(--space-3));
+  --marketing-nav-cta-min-height: clamp(46px, 5vw, 52px);
+  --marketing-nav-cta-padding-x: clamp(16px, 2.2vw, 22px);
+  --marketing-nav-offset: clamp(68px, 8vw, 84px);
+  --marketing-section-padding: clamp(18px, 4.5vw, 42px);
+  --section-content-gap: clamp(12px, 2.4vw, var(--space-4));
+  --section-intro-gap: clamp(8px, 2vw, 16px);
+  --section-intro-header-gap: 8px;
+  --section-split-gap: clamp(28px, 5vw, 72px);
+  --section-body-measure: 60ch;
+  --section-body-size: clamp(1.08rem, 2vw, 1.3rem);
+  --section-hero-title-measure: 11ch;
+  --section-hero-title-size: clamp(2.8rem, 6.6vw, 4.9rem);
+  --section-hero-body-measure: 44ch;
+  --section-hero-body-size: 1.05rem;
+  --section-chip-gap: 10px;
+  --section-card-padding: var(--space-4);
+  --section-faq-padding-x: 20px;
+  --section-faq-padding-y: 18px;
+  --section-faq-padding-bottom: 20px;
+  --section-hero-actions-offset: 10px;
+  --section-cta-gap: clamp(20px, 4vw, 40px);
+  --section-cta-padding: clamp(28px, 5vw, 44px);
+  --section-banner-cta-min-height: 52px;
+  --section-banner-cta-padding-x: 22px;
+  --workflow-step-gap: 18px;
+  --workflow-step-mobile-gap: 14px;
+  --workflow-content-gap: var(--space-1);
+  --workflow-content-mobile-gap: 8px;
+  --workflow-grid-gap: clamp(20px, 2.4vw, 28px);
+  --workflow-marker-min-height: 48px;
+  --workflow-marker-mobile-min-height: 42px;
+  --workflow-dot-size: 48px;
+  --workflow-dot-mobile-size: 42px;
+  --workflow-step-mobile-title-offset: 8px;
+  --workflow-line-offset-left: 56px;
+  --workflow-line-offset-right: -14px;
+  --workflow-line-mobile-top: 52px;
+  --workflow-line-mobile-bottom: -24px;
+  --workflow-line-mobile-left: 21px;
+  --use-case-side-width: clamp(300px, 28vw, 420px);
+  --use-case-layout-gap: clamp(24px, 4vw, 52px);
+  --hero-grid-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  --hero-gap: clamp(12px, 4vw, var(--space-5));
+  --hero-copy-gap: clamp(12px, 2vw, 18px);
+  --hero-copy-max-width: 460px;
+  --hero-media-offset-left: -6vw;
+  --hero-media-offset-right: calc(50% - 50vw);
+  --hero-frame-min-height: clamp(320px, 42vw, 420px);
+  --hero-frame-max-height: var(--section-image-max-height);
+  --hero-image-max-width: none;
+  --section-image-max-height: 632px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(219, 225, 255, 0.9), transparent 36%),
+    linear-gradient(180deg, #fbfcff 0%, #f3f6ff 100%);
+  color: var(--text);
+  font-family:
+    "Inter", "SF Pro Display", "SF Pro Text", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--font-body);
+  line-height: var(--line-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--site-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  max-width: 780px;
+}
+
+.marketingBrandRow[aria-current="page"] {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.brand {
+  margin: 0;
+  min-width: 0;
+  font-size: var(--font-display);
+  font-weight: 900;
+  line-height: var(--line-display);
+  letter-spacing: var(--tracking);
+  white-space: nowrap;
+}
+
+.primaryAction,
+.fieldLabel,
+.workflowDot,
+.imageWorkflowChip {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking);
+  font-size: var(--font-button);
+  font-weight: 800;
+  line-height: var(--line-label);
+}
+
+.fieldLabel,
+.workflowDot {
+  color: var(--text);
+}
+
+.primaryAction {
+  flex: 1;
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  background: var(--surface-card);
+  box-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease,
+    border-color 140ms ease,
+    opacity 140ms ease;
+}
+
+.primaryAction:not(:disabled) {
+  border-color: rgba(15, 98, 254, 0.42);
+  color: #ffffff;
+  background: var(--primary-strong);
+  box-shadow: 0 12px 24px rgba(15, 98, 254, 0.18);
+}
+
+.primaryAction:not(:disabled) .iconGlyph {
+  animation: cta-icon-spin 4400ms linear infinite;
+}
+
+.primaryAction:not(:disabled):is(:hover, :active, :focus-visible) {
+  color: #ffffff;
+  background: #0a4fcc;
+  border-color: #0a4fcc;
+  box-shadow: 0 12px 24px rgba(15, 98, 254, 0.24);
+  text-decoration: none;
+}
+
+.primaryAction:not(:disabled):is(:hover, :active, :focus-visible) .iconGlyph {
+  animation-duration: 1.6s;
+}
+
+.primaryAction:disabled {
+  color: var(--text-muted);
+  background: #d5d9e3;
+  border-color: #d5d9e3;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.iconGlyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.iconGlyph svg {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes cta-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes section-link-caret-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.skipLink {
+  position: absolute;
+  left: var(--shell-padding);
+  top: 0;
+  transform: translateY(-140%);
+  z-index: 50;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-ambient);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.skipLink:focus {
+  transform: translateY(12px);
+}
+
+.marketingShell {
+  width: var(--marketing-shell-width);
+  margin: 0 auto;
+  padding: var(--marketing-nav-offset) var(--shell-padding) var(--shell-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection,
+.marketingSection,
+.marketingFooter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-content-gap);
+  padding-block: var(--marketing-section-padding);
+}
+
+.heroSection,
+.marketingSection {
+  position: relative;
+}
+
+.marketingNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--marketing-nav-gap);
+  width: 100%;
+  padding: var(--marketing-nav-padding-y) var(--marketing-nav-padding-x);
+  background: var(--surface-glass);
+  box-shadow: var(--shadow-ambient);
+  backdrop-filter: blur(12px);
+}
+
+.marketingBrandRow,
+.marketingNavActions,
+.marketingNavRight,
+.heroActions,
+.siteFooterRow {
+  display: flex;
+  gap: var(--space);
+}
+
+.marketingBrandRow,
+.marketingNavActions,
+.marketingNavRight,
+.heroActions,
+.siteFooterRow {
+  align-items: center;
+}
+
+.heroActions {
+  width: auto;
+  justify-content: flex-start;
+  margin-top: 16px;
+}
+
+.heroActions .primaryAction {
+  width: auto;
+  flex: 0 0 auto;
+  min-width: 0;
+  padding: 0 22px;
+  min-height: 52px;
+}
+
+.marketingBrand {
+  margin: 0;
+}
+
+.marketingBrandRow {
+  color: var(--text);
+  text-decoration: none;
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.footerBrandTitle {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.marketingBrandRow:hover,
+.marketingBrandRow:focus-visible {
+  text-decoration: none;
+}
+
+.primaryAction:hover,
+.primaryAction:focus-visible,
+.primaryAction:hover .iconGlyph,
+.primaryAction:focus-visible .iconGlyph {
+  text-decoration: none;
+}
+
+.marketingNav .primaryAction {
+  width: auto;
+  min-width: 0;
+  min-height: var(--marketing-nav-cta-min-height);
+  padding: 0 var(--marketing-nav-cta-padding-x);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.marketingNavRight {
+  margin-left: auto;
+  min-width: 0;
+  justify-content: flex-end;
+}
+
+.marketingNavLinks {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(10px, 1.4vw, 18px);
+  min-width: 0;
+}
+
+.marketingNavLink {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.marketingNavLink:hover,
+.marketingNavLink:focus-visible {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.marketingIcon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
+.heroSectionGrid {
+  display: grid;
+  grid-template-columns: var(--hero-grid-columns);
+  gap: var(--hero-gap);
+  align-items: center;
+  width: 100%;
+}
+
+.heroSectionCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-copy-gap);
+  max-width: var(--hero-copy-max-width);
+  min-width: 0;
+}
+
+.heroSectionTitleAccent {
+  color: var(--primary);
+}
+
+.sectionText,
+.featureText,
+.useCaseBody,
+.faqItemAnswer,
+.faqPageAnswer {
+  margin: 0;
+  color: var(--text);
+}
+
+.sectionText {
+  max-width: var(--section-body-measure);
+  font-size: var(--section-body-size);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.featureText,
+.useCaseBody,
+.faqItemAnswer,
+.faqPageAnswer {
+  max-width: var(--section-body-measure);
+  font-size: var(--font-body);
+  line-height: var(--line-body);
+  text-wrap: pretty;
+}
+
+.faqItemAnswer,
+.faqPageAnswer {
+  max-width: none;
+}
+
+.heroSectionCopy .fieldLabel {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.heroSectionCopy > .sectionIntroHero {
+  margin-bottom: 2px;
+}
+
+.heroSectionCopy > .heroActions {
+  margin-top: var(--section-hero-actions-offset);
+}
+
+.heroSectionMedia,
+.sectionPanel,
+.featureCard {
+  border-radius: var(--radius);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-ambient);
+}
+
+.heroSectionMedia {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  align-self: stretch;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: var(--hero-media-offset-left);
+  margin-right: var(--hero-media-offset-right);
+  min-width: 0;
+}
+
+.heroSectionFrame {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: none;
+  aspect-ratio: 16 / 10;
+  min-height: var(--hero-frame-min-height);
+  max-height: var(--hero-frame-max-height);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.heroSectionFrame picture,
+.automationCtaMedia picture,
+.useCaseFrame picture {
+  display: block;
+}
+
+.heroSectionFrame img {
+  width: 100%;
+  max-width: var(--hero-image-max-width);
+  max-height: var(--section-image-max-height);
+  height: 100%;
+  display: block;
+  margin-inline: auto;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.sectionPanel {
+  padding: var(--section-card-padding);
+}
+
+.sectionIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-intro-gap);
+  width: 100%;
+}
+
+.sectionIntroHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-intro-header-gap);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sectionIntroCentered {
+  align-items: center;
+  text-align: center;
+}
+
+.sectionIntroCentered .sectionIntroHeader {
+  align-items: center;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: var(--font-display);
+  font-weight: 900;
+  line-height: var(--line-display);
+  letter-spacing: var(--tracking);
+  text-wrap: balance;
+}
+
+.sectionIntroBody {
+  margin: 0;
+}
+
+.sectionIntroSplit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--section-split-gap);
+  align-items: start;
+}
+
+.sectionIntroSplit .sectionIntroBody {
+  padding-top: calc(var(--font-button) * var(--line-label) + var(--section-intro-header-gap));
+}
+
+.sectionIntroCompact {
+  gap: 8px;
+}
+
+.sectionIntroHero {
+  gap: var(--hero-copy-gap);
+}
+
+.sectionTitleHero {
+  max-width: var(--section-hero-title-measure);
+  font-size: var(--section-hero-title-size);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.sectionLinkRow {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.faqSectionLinkRow {
+  text-align: center;
+}
+
+.sectionLinkCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-strong);
+  font-size: var(--font-button);
+  font-weight: 800;
+  letter-spacing: var(--tracking);
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: var(--line-label);
+  transition: color 140ms ease, opacity 140ms ease, transform 140ms ease;
+}
+
+.sectionLinkCta:hover,
+.sectionLinkCta:focus-visible {
+  color: #0a4fcc;
+  text-decoration: none;
+}
+
+.sectionLinkCaret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+  animation: section-link-caret-drift 1300ms ease-in-out infinite;
+}
+
+.sectionLinkCta:hover .sectionLinkCaret,
+.sectionLinkCta:focus-visible .sectionLinkCaret {
+  animation-duration: 520ms;
+}
+
+.imageWorkflowSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-content-gap);
+}
+
+.imageWorkflowSection .sectionIntro {
+  margin-bottom: var(--space-4);
+}
+
+.imageWorkflowGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space);
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.imageWorkflowCard {
+  min-width: 0;
+  min-height: 100%;
+}
+
+.imageWorkflowCardWide {
+  grid-column: span 8;
+}
+
+.imageWorkflowCardTall {
+  grid-column: span 4;
+}
+
+.imageWorkflowCardCompact {
+  grid-column: span 4;
+}
+
+.imageWorkflowCardFlow {
+  grid-column: span 8;
+}
+
+.imageWorkflowCardLight {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.imageWorkflowCardSoft {
+  background: rgba(232, 239, 255, 0.82);
+}
+
+.imageWorkflowCardPrimary {
+  background: rgba(15, 98, 254, 0.92);
+  color: #ffffff;
+  box-shadow: var(--shadow-ambient);
+}
+
+.imageWorkflowCardWarm {
+  background: rgba(238, 244, 255, 0.96);
+}
+
+.imageWorkflowSection .featureCard,
+.imageWorkflowSection .sectionPanel {
+  padding: var(--section-card-padding);
+  border-radius: var(--radius);
+  border: 1px solid rgba(219, 225, 255, 0.9);
+  box-shadow: var(--shadow-ambient);
+}
+
+.imageWorkflowCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.imageWorkflowSection .featureTitle {
+  font-size: var(--font-title);
+  line-height: var(--line-title);
+  letter-spacing: var(--tracking);
+  margin: 0;
+}
+
+.imageWorkflowSection .fieldLabel {
+  color: var(--text);
+}
+
+.imageWorkflowCardPrimary .fieldLabel,
+.imageWorkflowCardPrimary .featureText,
+.imageWorkflowCardPrimary .featureTitle {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.imageWorkflowCardPrimary .imageWorkflowChip {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.imageWorkflowCardFlow {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWorkflowChipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--section-chip-gap);
+  margin-top: auto;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.imageWorkflowChipRow > li {
+  display: flex;
+}
+
+.imageWorkflowChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius);
+  background: rgba(219, 225, 255, 0.58);
+  color: var(--primary);
+}
+
+.imageWorkflowChipLiteral {
+  text-transform: none;
+}
+
+.featureCard {
+  padding: var(--section-card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.featureTitle {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.faqItem {
+  padding: 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.faqItem:last-child {
+  border-bottom: 0;
+}
+
+.faqItemSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--section-faq-padding-y) 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faqItemSummary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItemTitle {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.faqItemIcon {
+  flex: 0 0 auto;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faqItem:not([open]) .faqItemIcon {
+  transform: rotate(180deg);
+}
+
+.faqItemBody {
+  padding: 0 0 var(--section-faq-padding-bottom);
+}
+
+.faqPageList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+.faqPageItem {
+  padding: var(--section-faq-padding-y) var(--section-faq-padding-x) var(--section-faq-padding-bottom);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.faqPageItem:first-child {
+  padding-top: 0;
+}
+
+.faqPageItem:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faqPageQuestion {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.faqPageQuestionLink {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.faqPageQuestionLink:hover,
+.faqPageQuestionLink:focus-visible {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.automationCtaSection {
+  margin: 0;
+}
+
+.automationCtaPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--section-cta-gap);
+  width: 100%;
+  padding: var(--section-cta-padding);
+  border-radius: var(--radius);
+  background: var(--primary-strong);
+  border: 1px solid rgba(15, 98, 254, 0.92);
+  box-shadow: var(--shadow-ambient);
+}
+
+.automationCtaCopy {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.automationCtaCopy .fieldLabel {
+  color: #ffffff;
+}
+
+.automationCtaCopy .sectionTitle {
+  color: #ffffff;
+}
+
+.automationCtaCopy .sectionText {
+  color: rgba(255, 255, 255, 0.92);
+  max-width: var(--section-body-measure);
+}
+
+.automationCtaActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+}
+
+.automationCtaActions .primaryAction {
+  width: auto;
+  flex: 0 0 auto;
+  min-width: 0;
+  min-height: var(--section-banner-cta-min-height);
+  padding: 0 var(--section-banner-cta-padding-x);
+  color: var(--primary-strong);
+  background: #ffffff;
+  box-shadow: var(--shadow-ambient);
+}
+
+.automationCtaActions .primaryAction:hover {
+  background: #ffffff;
+  color: var(--primary-strong);
+  border-color: #ffffff;
+}
+
+.automationCtaActions .primaryAction:hover .iconGlyph {
+  color: var(--primary-strong);
+}
+
+.automationCtaMedia {
+  width: 100%;
+  max-width: 1040px;
+  margin: var(--space-4) auto 0;
+}
+
+.automationCtaMedia img,
+.useCaseFrame img {
+  display: block;
+  width: 100%;
+  max-height: var(--section-image-max-height);
+  height: auto;
+  object-fit: contain;
+}
+
+.figureCaption {
+  margin-top: 14px;
+  padding-inline: 12px;
+  color: var(--text);
+  font-size: var(--font-button);
+  line-height: var(--line-label);
+  text-wrap: balance;
+}
+
+.figureCaption strong {
+  font-weight: 800;
+}
+
+.figureCaptionLeft {
+  width: fit-content;
+  max-width: 100%;
+  margin-right: auto;
+  text-align: left;
+}
+
+.figureCaptionRight {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  text-align: right;
+}
+
+.figureCaptionCenter {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.closingBanner {
+  padding-top: 0;
+}
+
+.sectionPatternWorkflow,
+.workflowTimeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--workflow-grid-gap);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.workflowStep,
+.workflowItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--workflow-step-gap);
+  align-items: start;
+  min-width: 0;
+}
+
+.workflowStepLead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--workflow-content-gap);
+  width: 100%;
+}
+
+.workflowMarker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--workflow-marker-min-height);
+}
+
+.workflowMarker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--workflow-line-offset-left);
+  right: var(--workflow-line-offset-right);
+  height: 2px;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.workflowDot {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--workflow-dot-size);
+  height: var(--workflow-dot-size);
+  border-radius: 999px;
+  background: var(--surface-card);
+  border: 2px solid rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-ambient);
+}
+
+.workflowStepBody,
+.workflowContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--workflow-content-gap);
+  padding: 0;
+}
+
+.workflowContent .featureTitle,
+.workflowContent .featureText {
+  margin: 0;
+}
+
+.useCaseSection {
+  gap: clamp(20px, 4vw, 36px);
+}
+
+.sectionPatternUseCase,
+.useCaseLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--use-case-side-width);
+  gap: var(--use-case-layout-gap);
+  align-items: center;
+  overflow: visible;
+}
+
+.useCaseMedia {
+  min-width: 0;
+  width: calc(100% + var(--use-case-side-width) + var(--use-case-layout-gap) + 6vw);
+  max-width: none;
+  margin-left: calc(-1 * (2vw + var(--use-case-side-width) + var(--use-case-layout-gap)));
+  margin-right: 0;
+}
+
+.useCaseFrame {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: transparent;
+  box-shadow: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.useCaseList {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.useCaseItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: 0 0 24px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.useCaseItem + .useCaseItem {
+  padding-top: 24px;
+}
+
+.useCaseItem:last-child {
+  border-bottom: 0;
+}
+
+.useCaseTitle {
+  margin: 0;
+}
+
+.closingBannerPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--section-intro-gap);
+  padding: var(--section-cta-padding);
+  border-radius: var(--radius);
+  background: #ffd84d;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  text-align: center;
+  box-shadow: var(--shadow-ambient);
+}
+
+.closingBannerHeader {
+  align-items: center;
+}
+
+.closingBannerPanel .sectionTitle,
+.closingBannerPanel .fieldLabel {
+  color: #111111;
+}
+
+.closingBannerPanel .sectionText {
+  color: #111111;
+  text-wrap: balance;
+}
+
+.closingBannerActions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.closingBannerActions .primaryAction {
+  width: auto;
+  flex: 0 0 auto;
+  min-width: 0;
+  min-height: var(--section-banner-cta-min-height);
+  padding: 0 var(--section-banner-cta-padding-x);
+  color: #ffffff;
+  background: #111111;
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.closingBannerActions .primaryAction:hover {
+  background: #ffffff;
+  color: #111111;
+  border-color: #111111;
+}
+
+.closingBannerActions .primaryAction:hover .iconGlyph {
+  color: #111111;
+}
+
+.marketingFooter {
+  padding-block: clamp(12px, 3vw, var(--space-5));
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.footerShell {
+  width: var(--marketing-shell-width);
+  margin: 0 auto;
+  padding-inline: var(--shell-padding);
+}
+
+.siteFooterRow {
+  display: block;
+}
+
+.siteFooterBody {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-3);
+  min-width: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.siteFooterTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.siteFooterMetaRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: var(--space-3);
+  min-width: 0;
+  text-align: right;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.footerCopyright {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.footerCopyright {
+  font-weight: 600;
+}
+
+.marketingNavInner {
+  width: var(--marketing-shell-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--marketing-nav-gap);
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.marketingNavActions {
+  flex: 0 0 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 10px;
+}
+
+.contentPage {
+  display: grid;
+  gap: 20px;
+}
+
+.contentHero {
+  display: grid;
+  gap: 12px;
+  padding: clamp(22px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
+}
+
+.contentHero p,
+.contentSection p,
+.contentCard p,
+.contentList li {
+  max-width: 72ch;
+}
+
+.contentGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.contentCard,
+.contentSection {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.05);
+}
+
+.contentCard h2,
+.contentCard h3,
+.contentSection h2,
+.contentSection h3 {
+  margin-top: 0;
+}
+
+.contentList {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.contentCallout {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(15, 98, 254, 0.08), rgba(255, 255, 255, 0.96));
+  border: 1px solid rgba(15, 98, 254, 0.16);
+}
+
+.faqPageHero {
+  padding-top: clamp(20px, 3vw, 28px);
+}
+
+.faqPageSection {
+  padding-top: 0;
+}
+
+@media (max-width: 880px) {
+  :root {
+    --hero-grid-columns: 1fr;
+    --hero-copy-max-width: 560px;
+    --hero-media-offset-left: 0;
+    --hero-media-offset-right: 0;
+    --hero-frame-min-height: 360px;
+    --hero-image-max-width: min(100%, 760px);
+  }
+
+  .marketingShell,
+  .footerShell {
+    width: var(--marketing-shell-width-mobile);
+  }
+
+  .marketingNavInner {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .marketingNavRight {
+    order: 0;
+    width: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+  .marketingNavLinks {
+    justify-content: flex-end;
+    overflow: visible;
+    padding-bottom: 0;
+    flex: 0 1 auto;
+    gap: 12px;
+  }
+
+  .marketingNavActions > .fieldLabel {
+    display: none;
+  }
+
+  .heroSectionGrid,
+  .imageWorkflowGrid,
+  .useCaseLayout,
+  .workflowTimeline {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionIntroSplit {
+    grid-template-columns: 1fr;
+    gap: var(--section-intro-gap);
+  }
+
+  .workflowTimeline {
+    gap: 24px;
+  }
+
+  .workflowStep,
+  .workflowItem {
+    display: grid;
+    grid-template-columns: var(--workflow-dot-mobile-size) minmax(0, 1fr);
+    column-gap: var(--workflow-step-mobile-gap);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .workflowStepLead {
+    display: grid;
+    grid-template-columns: var(--workflow-dot-mobile-size) minmax(0, 1fr);
+    grid-column: 1 / -1;
+    align-items: start;
+  }
+
+  .workflowMarker::after {
+    top: var(--workflow-line-mobile-top);
+    bottom: var(--workflow-line-mobile-bottom);
+    left: var(--workflow-line-mobile-left);
+    right: auto;
+    width: 2px;
+    height: auto;
+    transform: none;
+  }
+
+  .workflowDot {
+    width: var(--workflow-dot-mobile-size);
+    height: var(--workflow-dot-mobile-size);
+  }
+
+  .workflowMarker {
+    min-height: var(--workflow-marker-mobile-min-height);
+  }
+
+  .workflowStepLead .featureTitle {
+    padding-top: var(--workflow-step-mobile-title-offset);
+  }
+
+  .workflowStepBody,
+  .workflowContent {
+    gap: var(--workflow-content-mobile-gap);
+    padding-top: var(--workflow-step-mobile-title-offset);
+    grid-column: 2;
+  }
+
+  .imageWorkflowCardWide,
+  .imageWorkflowCardTall,
+  .imageWorkflowCardCompact,
+  .imageWorkflowCardFlow {
+    grid-column: auto;
+  }
+
+  .heroSectionFrame {
+    width: 100%;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+  }
+
+  .heroSectionMedia,
+  .useCaseMedia {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
+  .useCaseFrame {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+  }
+
+  .heroSectionCopy {
+    width: 100%;
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectionIntroHero {
+    width: 100%;
+  }
+
+  .sectionIntroHero .sectionIntroHeader,
+  .sectionIntroSplit .sectionIntroHeader {
+    align-items: center;
+  }
+
+  .sectionIntroHero .sectionTitle,
+  .sectionIntroHero .sectionIntroBody,
+  .sectionIntroSplit .sectionTitle,
+  .sectionIntroSplit .sectionIntroBody {
+    max-width: none;
+    text-align: center;
+  }
+
+  .sectionIntroSplit .sectionIntroBody {
+    padding-top: 0;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .sectionTitleHero {
+    width: 100%;
+    margin-inline: auto;
+    font-size: clamp(2.45rem, 7.2vw, 3.6rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+
+  .automationCtaPanel {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    text-align: left;
+  }
+
+  .automationCtaCopy {
+    gap: var(--section-intro-gap);
+  }
+
+  .automationCtaActions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 560px) {
+  :root {
+    --marketing-nav-padding-x: 12px;
+    --hero-frame-min-height: 0;
+    --hero-image-max-width: 100%;
+  }
+
+  .marketingNavLinks {
+    display: none;
+  }
+
+  .marketingNavRight {
+    order: 0;
+    width: auto;
+    margin-left: auto;
+  }
+
+  .heroSectionFrame {
+    aspect-ratio: auto;
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .heroSectionFrame img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .heroSectionCopy {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .sectionIntroHero .sectionIntroHeader {
+    gap: 8px;
+  }
+
+  .heroSectionCopy .fieldLabel {
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+  }
+
+  .sectionTitleHero {
+    width: 100%;
+    margin-inline: auto;
+    font-size: clamp(1.9rem, 10.5vw, 2.85rem);
+    line-height: 1.05;
+    letter-spacing: -0.028em;
+  }
+
+  .heroActions {
+    margin-top: 4px;
+  }
+
+  .heroSection .heroActions,
+  .imageWorkflowSection .heroActions {
+    display: none;
+  }
+
+  .automationCtaPanel {
+    width: 100%;
+  }
+
+  .automationCtaActions .primaryAction,
+  .automationCtaMedia {
+    max-width: 100%;
+  }
+
+  .marketingNavLink {
+    font-size: 0.82rem;
+  }
+
+  .marketingBrand {
+    font-size: clamp(1.55rem, 5.4vw, 2rem);
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --marketing-nav-padding-x: 10px;
+  }
+
+  .marketingBrand {
+    font-size: 1.85rem;
+  }
+
+  .marketingNavInner {
+    gap: 8px;
+  }
+
+  .siteFooterBody {
+    gap: 8px;
+  }
+
+  .siteFooterMetaRow {
+    gap: 8px;
+    font-size: 0.72rem;
+  }
+
+  .marketingNav .primaryAction {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+  }
+
+}

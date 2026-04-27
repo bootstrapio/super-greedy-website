@@ -1,1 +1,0 @@
-document.querySelectorAll("[data-current-year]").forEach(e=>{e.textContent=String((new Date).getFullYear())});
