@@ -83,9 +83,7 @@
   --hero-copy-max-width: 460px;
   --hero-media-offset-left: -6vw;
   --hero-media-offset-right: calc(50% - 50vw);
-  --hero-frame-min-height: clamp(320px, 42vw, 420px);
-  --hero-frame-max-height: var(--section-image-max-height);
-  --hero-image-max-width: none;
+  --marketing-showcase-image-max-width: 1040px;
   --section-image-max-height: 632px;
 }
 
@@ -516,7 +514,7 @@ button:disabled {
   margin-top: var(--section-hero-actions-offset);
 }
 
-.heroSectionMedia,
+.marketingShowcase--rightBleed,
 .sectionPanel,
 .featureCard {
   border-radius: var(--radius);
@@ -524,7 +522,7 @@ button:disabled {
   box-shadow: var(--shadow-ambient);
 }
 
-.heroSectionMedia {
+.marketingShowcase--rightBleed {
   padding: 0;
   background: transparent;
   box-shadow: none;
@@ -536,32 +534,84 @@ button:disabled {
   min-width: 0;
 }
 
-.heroSectionFrame {
+.marketingShowcase {
+  /* margin-block only: margin shorthand would clear --rightBleed / --leftBleed insets */
+  margin-block: 0;
+}
+
+.marketingShowcaseFrame {
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: none;
-  aspect-ratio: 16 / 10;
-  min-height: var(--hero-frame-min-height);
-  max-height: var(--hero-frame-max-height);
+  max-width: var(--marketing-showcase-image-max-width);
+}
+
+.marketingShowcaseFrame picture {
+  display: block;
+}
+
+.marketingShowcaseFrame img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: var(--section-image-max-height);
+  height: auto;
+  object-fit: contain;
+}
+
+.marketingShowcase--rightBleed .marketingShowcaseFrame {
+  width: 100%;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.heroSectionFrame picture,
-.automationCtaMedia picture,
-.useCaseFrame picture {
-  display: block;
+.marketingShowcase--rightBleed .marketingShowcaseFrame img {
+  margin-inline: 0;
+  object-position: left center;
 }
 
-.heroSectionFrame img {
+.marketingShowcase--leftBleed {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  width: calc(100% + var(--use-case-side-width) + var(--use-case-layout-gap) + 6vw);
+  max-width: none;
+  margin-left: calc(-1 * (2vw + var(--use-case-side-width) + var(--use-case-layout-gap)));
+  margin-right: 0;
+}
+
+.marketingShowcase--leftBleed .marketingShowcaseFrame {
+  width: min(100%, var(--marketing-showcase-image-max-width));
+  max-width: var(--marketing-showcase-image-max-width);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.marketingShowcase--leftBleed .figureCaption.figureCaptionCenter {
+  width: min(100%, var(--marketing-showcase-image-max-width));
+  max-width: var(--marketing-showcase-image-max-width);
+  margin-inline: 0;
+  text-align: center;
+}
+
+.marketingShowcase--leftBleed .marketingShowcaseFrame img {
+  margin-inline: 0;
+  object-position: right center;
+}
+
+.marketingShowcase--centered {
   width: 100%;
-  max-width: var(--hero-image-max-width);
-  max-height: var(--section-image-max-height);
-  height: 100%;
-  display: block;
+  max-width: var(--marketing-showcase-image-max-width);
+  margin: var(--space-4) auto 0;
+}
+
+.marketingShowcase--centered .marketingShowcaseFrame {
+  width: 100%;
+}
+
+.marketingShowcase--centered .marketingShowcaseFrame img {
   margin-inline: auto;
-  object-fit: contain;
-  object-position: center center;
 }
 
 .sectionPanel {
@@ -971,21 +1021,6 @@ button:disabled {
   color: var(--primary-strong);
 }
 
-.automationCtaMedia {
-  width: 100%;
-  max-width: 1040px;
-  margin: var(--space-4) auto 0;
-}
-
-.automationCtaMedia img,
-.useCaseFrame img {
-  display: block;
-  width: 100%;
-  max-height: var(--section-image-max-height);
-  height: auto;
-  object-fit: contain;
-}
-
 .figureCaption {
   margin-top: 14px;
   padding-inline: 12px;
@@ -1108,23 +1143,6 @@ button:disabled {
   gap: var(--use-case-layout-gap);
   align-items: center;
   overflow: visible;
-}
-
-.useCaseMedia {
-  min-width: 0;
-  width: calc(100% + var(--use-case-side-width) + var(--use-case-layout-gap) + 6vw);
-  max-width: none;
-  margin-left: calc(-1 * (2vw + var(--use-case-side-width) + var(--use-case-layout-gap)));
-  margin-right: 0;
-}
-
-.useCaseFrame {
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: transparent;
-  box-shadow: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .useCaseList {
@@ -1251,23 +1269,31 @@ button:disabled {
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: var(--space-3);
   min-width: 0;
   text-align: right;
   font-size: 0.8rem;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
   flex: 0 0 auto;
 }
 
 .footerCopyright {
   margin: 0;
   color: var(--text-muted);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35em;
+  text-transform: none;
 }
 
-.footerCopyright {
-  font-weight: 600;
+.footerAppVersion {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
 
 .marketingNavInner {
@@ -1364,8 +1390,6 @@ button:disabled {
     --hero-copy-max-width: 560px;
     --hero-media-offset-left: 0;
     --hero-media-offset-right: 0;
-    --hero-frame-min-height: 360px;
-    --hero-image-max-width: min(100%, 760px);
   }
 
   .marketingShell,
@@ -1466,14 +1490,15 @@ button:disabled {
     grid-column: auto;
   }
 
-  .heroSectionFrame {
+  .marketingShowcase--rightBleed .marketingShowcaseFrame {
     width: 100%;
+    margin-inline: 0;
     border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
   }
 
-  .heroSectionMedia,
-  .useCaseMedia {
+  .marketingShowcase--rightBleed,
+  .marketingShowcase--leftBleed {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
@@ -1481,9 +1506,26 @@ button:disabled {
     overflow: hidden;
   }
 
-  .useCaseFrame {
+  .marketingShowcase--leftBleed {
+    align-items: stretch;
+  }
+
+  .marketingShowcase--leftBleed .marketingShowcaseFrame {
+    width: 100%;
+    max-width: min(100%, var(--marketing-showcase-image-max-width));
+    margin-inline: auto;
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
+  }
+
+  .marketingShowcase--leftBleed .figureCaption.figureCaptionCenter {
+    width: 100%;
+    max-width: min(100%, var(--marketing-showcase-image-max-width));
+    margin-inline: auto;
+  }
+
+  .marketingShowcase--leftBleed .marketingShowcaseFrame img {
+    object-position: center center;
   }
 
   .heroSectionCopy {
@@ -1546,8 +1588,6 @@ button:disabled {
 @media (max-width: 560px) {
   :root {
     --marketing-nav-padding-x: 12px;
-    --hero-frame-min-height: 0;
-    --hero-image-max-width: 100%;
   }
 
   .marketingNavLinks {
@@ -1560,17 +1600,8 @@ button:disabled {
     margin-left: auto;
   }
 
-  .heroSectionFrame {
-    aspect-ratio: auto;
-    width: 100%;
-    min-height: 0;
-    max-height: none;
-    overflow: hidden;
-  }
-
-  .heroSectionFrame img {
-    max-width: 100%;
-    height: auto;
+  .marketingShowcase--rightBleed .marketingShowcaseFrame {
+    margin-inline: 0;
   }
 
   .heroSectionCopy {
@@ -1609,7 +1640,7 @@ button:disabled {
   }
 
   .automationCtaActions .primaryAction,
-  .automationCtaMedia {
+  .marketingShowcase--centered {
     max-width: 100%;
   }
 

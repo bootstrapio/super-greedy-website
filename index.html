@@ -72,7 +72,7 @@
   </head>
   <body id="top">
     <a class="skipLink" href="#main-content">Skip to content</a>
-        <header>
+    <header>
       <nav class="marketingNav" aria-label="Primary site navigation">
         <div class="marketingNavInner">
           <a class="marketingBrandRow" href="#top" aria-label="Super Greedy home" aria-current="page">
@@ -126,18 +126,18 @@
             </div>
           </article>
 
-          <figure class="heroSectionMedia">
-            <div class="heroSectionFrame">
-                <img
-                  src="./assets/images/supergreedy-trading-bot-futures-dashboard-single.webp"
-                  alt="Trading chart on a laptop screen showing a downward trend with bot controls on the side"
-                  title="SuperGreedy Trading Bot for Futures"
-                  width="1276"
-                  height="768"
-                  loading="eager"
-                  decoding="async"
-                  fetchpriority="high"
-                />
+          <figure class="marketingShowcase marketingShowcase--rightBleed">
+            <div class="marketingShowcaseFrame">
+              <img
+                src="./assets/images/supergreedy-trading-bot-futures-dashboard-single.webp"
+                alt="Trading chart on a laptop screen showing a downward trend with bot controls on the side"
+                title="SuperGreedy Trading Bot for Futures"
+                width="1276"
+                height="768"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
             </div>
           </figure>
         </div>
@@ -307,8 +307,8 @@
         </div>
 
         <div class="sectionPatternUseCase useCaseLayout">
-          <figure class="useCaseMedia">
-            <div class="useCaseFrame">
+          <figure class="marketingShowcase marketingShowcase--leftBleed">
+            <div class="marketingShowcaseFrame">
               <img
                 src="./assets/images/supergreedy-trading-bot-futures-dashboard-multitimeframe.webp"
                 alt="Trading dashboard on a laptop screen showing multiple candlestick charts and trading options for futures"
@@ -413,16 +413,18 @@
           </p>
         </div>
         
-        <figure class="automationCtaMedia">
-          <img
-            src="./assets/images/supergreedy-trading-bot-futures-dashboard-multicontracts.webp"
-            alt="Trading dashboard on a laptop screen showing multiple candlestick charts and trading options for futures"
-            title="SuperGreedy Trading Bot Interface for Futures"
-            width="1192"
-            height="768"
-            loading="lazy"
-            decoding="async"
-          />
+        <figure class="marketingShowcase marketingShowcase--centered">
+          <div class="marketingShowcaseFrame">
+            <img
+              src="./assets/images/supergreedy-trading-bot-futures-dashboard-multicontracts.webp"
+              alt="Trading dashboard on a laptop screen showing multiple candlestick charts and trading options for futures"
+              title="SuperGreedy Trading Bot Interface for Futures"
+              width="1192"
+              height="768"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <figcaption class="figureCaption figureCaptionCenter">
             <strong>Multi-Contract.</strong> Multiple futures contracts, one workspace.
           </figcaption>
@@ -674,7 +676,7 @@
       </section>
     </main>
 
-        <footer class="marketingFooter" aria-labelledby="footer-title">
+    <footer class="marketingFooter" aria-labelledby="footer-title">
       <div class="footerShell">
         <div class="siteFooterRow siteFooterBody">
           <div class="siteFooterTopRow">
@@ -683,7 +685,9 @@
               <p id="footer-title" class="featureTitle footerBrandTitle">Super Greedy</p>
             </div>
             <div class="siteFooterMetaRow">
-              <p class="footerCopyright">© <span data-current-year>2026</span></p>
+              <p class="footerCopyright">
+                <span class="footerVersionPrefix">v. </span><span class="footerAppVersion" translate="no" title="Released version">__MARKETING_APP_DISPLAY_VERSION__</span><span> © <span data-current-year>2026</span></span>
+              </p>
             </div>
           </div>
         </div>
