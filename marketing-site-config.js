@@ -1,0 +1,1 @@
+window.MARKETING_SITE_CONFIG=Object.freeze({gtmContainerId:"GTM-PTG5FV86"});
