@@ -1,0 +1,28 @@
+# Super Greedy
+
+> Automated futures trading software for ES, NQ, MES, and MNQ.
+
+## Canonical Website
+- https://supergreedy.com/
+
+## Product
+- Name: Super Greedy
+- Category: SoftwareApplication
+- Description: Super Greedy helps futures traders automate execution during market hours using configurable sessions, bias controls, detection modes, and risk settings.
+- Operating Systems: macOS, Windows
+
+## Key Topics
+- Automated futures trading
+- ES, NQ, MES, and MNQ futures
+- Practice, combine, and funded trading workflows
+- TopstepX and prop firm-compatible risk controls
+
+## Primary Content URLs
+- https://supergreedy.com/
+- https://supergreedy.com/sitemap.xml
+
+## Contact
+- Email: hello@supergreedy.com
+
+## Crawling
+- AI and search crawlers are allowed according to robots.txt.
