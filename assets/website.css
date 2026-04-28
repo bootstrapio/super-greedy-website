@@ -84,6 +84,11 @@
   --hero-media-offset-left: -6vw;
   --hero-media-offset-right: calc(50% - 50vw);
   --marketing-showcase-image-max-width: 1040px;
+  /* Capped frame/caption width (left-bleed desktop + stacked) */
+  --marketing-showcase-frame-max: min(100%, var(--marketing-showcase-image-max-width));
+  /* Use-case left-bleed horizontal breakout */
+  --marketing-use-case-bleed-inset: 2vw;
+  --marketing-use-case-bleed-out: 6vw;
   --section-image-max-height: 632px;
 }
 
@@ -480,25 +485,23 @@ button:disabled {
 }
 
 .sectionText {
-  max-width: var(--section-body-measure);
   font-size: var(--section-body-size);
   line-height: 1.55;
   text-wrap: pretty;
+}
+
+/* Deck / intro blurbs only; body copy uses .featureText, .useCaseBody, etc. */
+.sectionText.sectionIntroBody {
+  max-width: var(--section-body-measure);
 }
 
 .featureText,
 .useCaseBody,
 .faqItemAnswer,
 .faqPageAnswer {
-  max-width: var(--section-body-measure);
   font-size: var(--font-body);
   line-height: var(--line-body);
   text-wrap: pretty;
-}
-
-.faqItemAnswer,
-.faqPageAnswer {
-  max-width: none;
 }
 
 .heroSectionCopy .fieldLabel {
@@ -512,6 +515,12 @@ button:disabled {
 
 .heroSectionCopy > .heroActions {
   margin-top: var(--section-hero-actions-offset);
+}
+
+/* Clear default figure margins; bleed rules below set horizontal insets. */
+.marketingShowcase {
+  margin-block: 0;
+  margin-inline: 0;
 }
 
 .marketingShowcase--rightBleed,
@@ -532,11 +541,6 @@ button:disabled {
   margin-left: var(--hero-media-offset-left);
   margin-right: var(--hero-media-offset-right);
   min-width: 0;
-}
-
-.marketingShowcase {
-  /* margin-block only: margin shorthand would clear --rightBleed / --leftBleed insets */
-  margin-block: 0;
 }
 
 .marketingShowcaseFrame {
@@ -575,22 +579,24 @@ button:disabled {
   flex-direction: column;
   align-items: flex-end;
   min-width: 0;
-  width: calc(100% + var(--use-case-side-width) + var(--use-case-layout-gap) + 6vw);
+  width: calc(
+    100% + var(--use-case-side-width) + var(--use-case-layout-gap) + var(--marketing-use-case-bleed-out)
+  );
   max-width: none;
-  margin-left: calc(-1 * (2vw + var(--use-case-side-width) + var(--use-case-layout-gap)));
+  margin-left: calc(
+    -1 * (var(--marketing-use-case-bleed-inset) + var(--use-case-side-width) + var(--use-case-layout-gap))
+  );
   margin-right: 0;
 }
 
 .marketingShowcase--leftBleed .marketingShowcaseFrame {
-  width: min(100%, var(--marketing-showcase-image-max-width));
-  max-width: var(--marketing-showcase-image-max-width);
+  width: var(--marketing-showcase-frame-max);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .marketingShowcase--leftBleed .figureCaption.figureCaptionCenter {
-  width: min(100%, var(--marketing-showcase-image-max-width));
-  max-width: var(--marketing-showcase-image-max-width);
+  width: var(--marketing-showcase-frame-max);
   margin-inline: 0;
   text-align: center;
 }
@@ -655,14 +661,16 @@ button:disabled {
   margin: 0;
 }
 
+/* Same column widths and gap as .useCaseLayout (wide | list track). */
 .sectionIntroSplit {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--section-split-gap);
+  grid-template-columns: minmax(0, 1fr) var(--use-case-side-width);
+  gap: var(--use-case-layout-gap);
   align-items: start;
 }
 
 .sectionIntroSplit .sectionIntroBody {
+  max-width: 100%;
   padding-top: calc(var(--font-button) * var(--line-label) + var(--section-intro-header-gap));
 }
 
@@ -1132,7 +1140,8 @@ button:disabled {
   margin: 0;
 }
 
-.useCaseSection {
+.useCaseSection,
+.faqSection {
   gap: clamp(20px, 4vw, 36px);
 }
 
@@ -1510,18 +1519,16 @@ button:disabled {
     align-items: stretch;
   }
 
-  .marketingShowcase--leftBleed .marketingShowcaseFrame {
-    width: 100%;
-    max-width: min(100%, var(--marketing-showcase-image-max-width));
-    margin-inline: auto;
-    border-top-left-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
-  }
-
+  .marketingShowcase--leftBleed .marketingShowcaseFrame,
   .marketingShowcase--leftBleed .figureCaption.figureCaptionCenter {
     width: 100%;
-    max-width: min(100%, var(--marketing-showcase-image-max-width));
+    max-width: var(--marketing-showcase-frame-max);
     margin-inline: auto;
+  }
+
+  .marketingShowcase--leftBleed .marketingShowcaseFrame {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
   }
 
   .marketingShowcase--leftBleed .marketingShowcaseFrame img {
@@ -1600,7 +1607,8 @@ button:disabled {
     margin-left: auto;
   }
 
-  .marketingShowcase--rightBleed .marketingShowcaseFrame {
+  .marketingShowcase--rightBleed .marketingShowcaseFrame,
+  .marketingShowcase--leftBleed .marketingShowcaseFrame {
     margin-inline: 0;
   }
 
