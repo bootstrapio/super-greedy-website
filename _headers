@@ -1,0 +1,28 @@
+# Netlify / Cloudflare Pages (ignored by GitHub Pages-only hosting).
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/assets/icons/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/robots.txt
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/llms.txt
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/.well-known/llms.txt
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
