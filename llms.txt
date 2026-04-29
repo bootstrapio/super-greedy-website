@@ -7,6 +7,7 @@ Super Greedy helps futures traders automate execution during market hours using 
 ## Site
 
 - [Super Greedy | Automated Futures Trading Software for ES, NQ, MES & MNQ](https://supergreedy.com/): Main marketing site and product overview
+- [ORB Strategy for Futures | Opening Range Breakout Automation](https://supergreedy.com/orb/): HTML page
 - [Sitemap](https://supergreedy.com/sitemap.xml): Machine-readable list of indexable URLs
 - [This file](https://supergreedy.com/llms.txt): Curated summary for LLMs and agents
 
