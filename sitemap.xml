@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://supergreedy.com/detection/pattern/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://supergreedy.com/detection/trend/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

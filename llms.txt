@@ -2,12 +2,13 @@
 
 > Automated futures trading software for ES, NQ, MES, and MNQ.
 
-Super Greedy helps futures traders automate execution during market hours using configurable sessions, bias controls, detection modes, and risk settings. Desktop apps: macOS and Windows.
+Super Greedy helps futures traders automate execution during market hours using configurable sessions, bias controls, Trend and Pattern detection, and risk settings. Desktop apps: macOS and Windows.
 
 ## Site
 
 - [Super Greedy | Automated Futures Trading Software for ES, NQ, MES & MNQ](https://supergreedy.com/): Main marketing site and product overview
-- [Automated Trend Detection | Super Greedy](https://supergreedy.com/detection/trend/): HTML page
+- [Automated Pattern Detection for Futures | Super Greedy](https://supergreedy.com/detection/pattern/): HTML page
+- [Automated Trend Detection for Futures | Super Greedy](https://supergreedy.com/detection/trend/): HTML page
 - [Sitemap](https://supergreedy.com/sitemap.xml): Machine-readable list of indexable URLs
 - [This file](https://supergreedy.com/llms.txt): Curated summary for LLMs and agents
 
