@@ -1,4 +1,4 @@
-# Super Greedy
+# SUPER GREEDY
 
 > Automated futures trading software for ES, NQ, MES, and MNQ.
 
