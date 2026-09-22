@@ -1,12 +1,12 @@
 # SUPER GREEDY
 
-> Automated futures trading software for ES, NQ, MES, and MNQ.
+> Automated trading software for futures, crypto, and stocks.
 
-Super Greedy runs one Trend detection strategy across live futures charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders configure sessions, bias, contracts, timeframe, exit type, and max stop loss; the strategy itself is fixed. Desktop apps: macOS and Windows.
+Super Greedy runs one Trend detection strategy across live futures, crypto, and stock charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a supported market and configure sessions, bias, timeframe, exit type, and max stop loss; the strategy itself is fixed. Available instruments depend on the selected provider and account. Desktop apps: macOS and Windows.
 
 ## Site
 
-- [Super Greedy | Automated Futures Trading Software for ES, NQ, MES & MNQ](https://supergreedy.com/): Main marketing site and product overview
+- [Super Greedy | Automated Trading for Futures, Crypto & Stocks](https://supergreedy.com/): Main marketing site and product overview
 - [Sitemap](https://supergreedy.com/sitemap.xml): Machine-readable list of indexable URLs
 - [This file](https://supergreedy.com/llms.txt): Curated summary for LLMs and agents
 

@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".marketingNav");if(!e)return;const s=()=>{e.classList.toggle("marketingNav--scrolled",window.scrollY>0)};s(),window.addEventListener("scroll",s,{passive:!0})})();
