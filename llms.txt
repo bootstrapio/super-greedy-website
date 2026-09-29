@@ -1,4 +1,4 @@
-# SUPER GREEDY
+# Super Greedy
 
 > Automated trading software for futures, crypto, and stocks.
 
