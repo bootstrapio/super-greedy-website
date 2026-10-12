@@ -2,7 +2,7 @@
 
 > Automated trading software for futures, crypto, and stocks.
 
-Super Greedy runs one Trend detection strategy across live futures, crypto, and stock charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a supported market and configure sessions, bias, timeframe, exit type, and max stop loss; the strategy itself is fixed. Available instruments depend on the selected provider and account. Desktop apps: macOS and Windows.
+Super Greedy runs your selected strategy across live futures, crypto, and stock charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a supported market and configure sessions, bias, timeframe, exit type, and max stop loss. Available instruments depend on the selected provider and account. Desktop apps: macOS and Windows.
 
 ## Site
 
