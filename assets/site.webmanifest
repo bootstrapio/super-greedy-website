@@ -3,8 +3,8 @@
   "short_name": "Super Greedy",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "rgb(29, 29, 31)",
+  "theme_color": "rgb(29, 29, 31)",
   "icons": [
     {
       "src": "/assets/icons/supergreedy.png",
