@@ -1,18 +1,41 @@
 # Super Greedy
 
-> Automated trading software for futures, crypto, and stocks.
+> Automated trading software for futures.
 
-Super Greedy runs your selected strategy across live futures, crypto, and stock charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a supported market and configure sessions, bias, timeframe, exit type, and max stop loss. Available instruments depend on the selected provider and account. Desktop apps: macOS and Windows.
+Super Greedy runs your selected strategy across live futures charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a futures contract and configure sessions, bias, timeframe, exit type, and max stop loss. Available instruments depend on the TopStepX account. Desktop apps: macOS and Windows.
 
 ## Site
 
-- [Super Greedy | Automated Trading for Futures, Crypto & Stocks](https://supergreedy.com/): Main marketing site and product overview
+- [Super Greedy | Automated Trading for Futures](https://supergreedy.com/): Main marketing site and product overview
 - [Sitemap](https://supergreedy.com/sitemap.xml): Machine-readable list of indexable URLs
 - [This file](https://supergreedy.com/llms.txt): Curated summary for LLMs and agents
 
 ## Contact
 
 - [hello@supergreedy.com](mailto:hello@supergreedy.com)
+
+## Answers
+
+- Q: What is Super Greedy?
+  A: Super Greedy is automated futures trading software. It runs your selected strategy across your live futures charts and executes it for you inside the sessions, bias, and risk limits you configure.
+
+- Q: Does Super Greedy place trades automatically?
+  A: Yes. When your selected setup appears inside your configured session and bias, Super Greedy submits the entry with its stop loss and take profit attached, and manages the position through to the exit. You set the limits; it does the execution.
+
+- Q: Can I choose a different strategy?
+  A: Yes. You can select the strategy that fits your trading plan, then configure its sessions, bias, futures contracts, timeframes, and risk limits.
+
+- Q: What chart layouts does Super Greedy support?
+  A: Super Greedy supports multi-timeframe futures layouts. Each pane can use the intervals and futures symbols you configure in the Strategy card, and each pane can trade.
+
+- Q: Which futures contracts does Super Greedy support?
+  A: Super Greedy currently supports futures. Available contracts include ES, NQ, MES, and MNQ, depending on your TopStepX account.
+
+- Q: Can I customize the risk and execution parameters?
+  A: Yes — strategy, contracts, timeframe, exit type, and max stop loss. Super Greedy applies the rules you configure consistently across your selected charts and sessions.
+
+- Q: Does Super Greedy work with prop firm evaluation rules?
+  A: Yes. Super Greedy works with TopStepX practice, evaluation, and funded accounts. Position sizing and max stop loss help you stay inside prop firm evaluation requirements.
 
 ## Crawling
 
