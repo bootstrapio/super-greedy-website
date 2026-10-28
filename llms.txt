@@ -7,6 +7,7 @@ Super Greedy runs your selected strategy across live futures charts and executes
 ## Site
 
 - [Super Greedy | Automated Trading for Futures](https://supergreedy.com/): Main marketing site and product overview
+- [ORB (Opening Range Breakout) Automated Trading | Super Greedy](https://supergreedy.com/orb/): ORB (Opening Range Breakout) automated trading strategy page
 - [Sitemap](https://supergreedy.com/sitemap.xml): Machine-readable list of indexable URLs
 - [This file](https://supergreedy.com/llms.txt): Curated summary for LLMs and agents
 
