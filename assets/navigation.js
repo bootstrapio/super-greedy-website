@@ -1,1 +1,1 @@
-(()=>{const e=document.querySelector(".marketingNav");if(!e)return;const s=()=>{e.classList.toggle("marketingNav--scrolled",window.scrollY>0)};s(),window.addEventListener("scroll",s,{passive:!0})})();
+(()=>{const e=document.querySelector(".marketingNav"),n=document.querySelector("[data-marketing-nav-sentinel]");if(!e||!n||"function"!=typeof window.IntersectionObserver)return;new window.IntersectionObserver(([n])=>{e.classList.toggle("marketingNav--scrolled",!n.isIntersecting)}).observe(n)})();
