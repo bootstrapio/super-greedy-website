@@ -1,13 +1,14 @@
 # Super Greedy
 
-> Automated trading software for futures.
+> TopStepX trading bot for automated futures.
 
-Super Greedy runs your selected strategy across live futures charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a futures contract and configure sessions, bias, timeframe, exit type, and max stop loss. Available instruments depend on the TopStepX account. Desktop apps: macOS and Windows.
+Super Greedy is an automated trading bot for TopStepX futures accounts. It runs your selected strategy across live futures charts and executes it automatically, submitting the entry with its stop loss and take profit and managing the position to the exit. Traders select a futures contract and configure sessions, bias, timeframe, exit type, and max stop loss. Available instruments depend on the TopStepX account. Desktop apps: macOS and Windows.
 
 ## Site
 
 - [Super Greedy | Automated Trading for Futures](https://supergreedy.com/): Main marketing site and product overview
 - [ORB (Opening Range Breakout) Automated Trading | Super Greedy](https://supergreedy.com/orb/): ORB (Opening Range Breakout) automated trading strategy page
+- [TopStepX Trading Bot | API Setup & Automated Futures | Super Greedy](https://supergreedy.com/topstepx-trading-bot/): TopStepX API access and trading bot setup
 - [Sitemap](https://supergreedy.com/sitemap.xml): Machine-readable list of indexable URLs
 - [This file](https://supergreedy.com/llms.txt): Curated summary for LLMs and agents
 
